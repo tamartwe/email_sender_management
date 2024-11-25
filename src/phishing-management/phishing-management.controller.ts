@@ -9,6 +9,7 @@ export class PhishingManagementController {
 
   constructor(private readonly phishingManagementService: PhishingManagementService) {}
 
+  @UseGuards(AuthGuard)
   @Get()
   async getAll(): Promise<any> {
     return this.phishingManagementService.getAllRecords();

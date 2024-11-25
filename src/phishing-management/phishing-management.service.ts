@@ -26,9 +26,8 @@ export class PhishingManagementService {
         const postData = {
           email: dto.email
         };
-    
         try {
-          const response = await axios.post('http://localhost:3000/phishing/send', postData, {
+          const response = await axios.post('http://localhost:3002/phishing/send', postData, {
             headers: {
               'Content-Type': 'application/json'
             }
