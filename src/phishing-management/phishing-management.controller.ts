@@ -14,7 +14,8 @@ export class PhishingManagementController {
   async getAll(): Promise<any> {
     return this.phishingManagementService.getAllRecords();
   }
-
+  
+  @UseGuards(AuthGuard)
   @Post('send')
   async sendEmail(@Body() emailDto: EmailDto): Promise<any> {
     return this.phishingManagementService.sendEmail(emailDto);
